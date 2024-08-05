@@ -33,7 +33,9 @@ If there are any tables created within the database they will be loaded within t
 5. **Inventory tread checker**: Do you have too many tracks? Or do you want to keep a collection of tracks that correspond to their owners? The button uses edge detection and other technologies to match what is in inventory to what you find in the field. It will give you a score out of 500 on the probability it is your image in inventory (self-analysis is always required so do not rely on this tool for total accuracy). It keeps a record of the tracks that you acquire and updates the data in the SQL database file accordingly. It allows you to verify accuracy and keeps memory of those tracks made in different environments and it "learns" the more images you provide.
 
 ## Installation
-This program requires an IDE to run. If you want to make this program portable for Windows machines I would look towards using Pysinstaller (down below).
+Download the release here: https://github.com/Doormann/Tracks-and-Treads-Management-System/releases/tag/TTMS.exe
+Or 
+Run it as a python program from the source code, but it does require and IDE to run. If you want to make this program portable for Windows machines I would look towards using Pysinstaller (down below).
 If not, here are some other ways you can download the program.
 ### Prerequisites
 - Python 3.6 or higher
