@@ -15,7 +15,7 @@ class MainGUI:
         self.setup_buttons()
 
     def setup_background(self):
-        background_image_path = r"TTMS2.5.0\assets\track_logo.png"
+        background_image_path = "track_logo.png"
         try:
             background_image = Image.open(background_image_path)
             background_image = background_image.resize((750, 750), Image.LANCZOS)
@@ -31,8 +31,8 @@ class MainGUI:
         style.map('TButton', foreground=[('active', '!disabled', 'green')], background=[('active', 'black')])
 
         buttons = [
-            ("Create Case Folder", self.create_case_folder_with_dialog),
-            ("Load Case Folder", self.load_case_folder),
+            ("Create Case ", self.create_case_folder_with_dialog),
+            ("Load Case", self.load_case_table),
             ("View Image Library", self.safe_open_library_window),
             ("Inventory Tread Checker", self.match_shoe_print),
         ]
@@ -48,9 +48,9 @@ class MainGUI:
         from utils.file_utils import create_case_folder_with_dialog
         create_case_folder_with_dialog(self.root)
 
-    def load_case_folder(self):
-        from utils.file_utils import load_case_folder
-        load_case_folder()
+    def load_case_table(self):
+        from utils.file_utils import load_case_table
+        load_case_table()
 
     def match_shoe_print(self):
         from utils.matching_utils import match_shoe_print
