@@ -1,7 +1,8 @@
 import os
 import sqlite3
 import sys
-from tkinter import messagebox, simpledialog, filedialog
+from tkinter import messagebox, simpledialog, filedialog, Toplevel, Listbox, Button
+import tkinter as tk
 
 db_file_path = None
 current_case_table = None
@@ -79,27 +80,78 @@ def load_inventory_from_db():
         messagebox.showerror("Error", f"Failed to load inventory: {str(e)}")
         return []
 
-def create_case_folder(case_name):
-    new_folder_path = os.path.join(os.getcwd(), case_name)
-    if not os.path.exists(new_folder_path):
-        os.makedirs(new_folder_path)
-        messagebox.showinfo("Success", f"Folder '{case_name}' created at {new_folder_path}")
-        create_case_table(case_name)
-    else:
-        messagebox.showerror("Error", "Folder already exists.")
-
 def create_case_folder_with_dialog(root):
     case_name = simpledialog.askstring("Create Case Folder", "Enter the case name:", parent=root)
     if case_name:
-        create_case_folder(case_name)
-
-def load_case_folder():
-    folder_path = filedialog.askdirectory(title="Select Case Folder")
-    if folder_path:
-        case_name = os.path.basename(folder_path)
-        set_current_case_table(case_name)
         create_case_table(case_name)
-        messagebox.showinfo("Info", "Case loaded successfully.")
+
+def load_case_table():
+
+    tables = get_database_tables(db_file_path)
+    if not tables:
+        messagebox.showinfo("Info", "No tables found in the database.")
+        return
+
+    table_selection_window = Toplevel()
+    table_selection_window.title("Select Case Table")
+
+    table_listbox = Listbox(table_selection_window, width=80)
+    for table in tables:
+        table_name = table[0]
+        table_listbox.insert(tk.END, table_name)
+
+    table_listbox.pack(padx=10, pady=10)
+
+    def on_select_table():
+        selected_index = table_listbox.curselection()
+        if selected_index:
+            selected_table = table_listbox.get(selected_index)
+            global current_case_table
+            current_case_table = selected_table
+            messagebox.showinfo("Info", f"Table '{selected_table}' loaded successfully.")
+            table_selection_window.destroy()  # Close the selection window
+        else:
+            messagebox.showwarning("Warning", "Please select a table.")
+
+    select_button = Button(table_selection_window, text="Select Table", command=on_select_table)
+    select_button.pack(pady=10)
+
+    close_button = Button(table_selection_window, text="Close", command=table_selection_window.destroy)
+    close_button.pack(pady=10)
+
+def get_database_tables(db_path):
+    """Fetch the list of tables in the database."""
+    try:
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+        tables = cursor.fetchall()
+        conn.close()
+        return tables
+    except Exception as e:
+        messagebox.showerror("Error", f"Failed to fetch tables: {str(e)}")
+        return []
+
+def display_tables_with_paths():
+    """Display the current tables with their file path locations."""
+    tables = get_database_tables(db_file_path)
+
+    if not tables:
+        messagebox.showinfo("Info", "No tables found in the database.")
+        return
+
+    tables_window = Toplevel()
+    tables_window.title("Current Tables")
+
+    table_listbox = Listbox(tables_window, width=80)
+    for table in tables:
+        table_name = table[0]
+        table_listbox.insert(tk.END, f"{table_name} - Location: {db_file_path}")
+
+    table_listbox.pack(padx=10, pady=10)
+
+    close_button = Button(tables_window, text="Close", command=tables_window.destroy)
+    close_button.pack(pady=10)
 
 def check_case_table_exists():
     return current_case_table is not None
