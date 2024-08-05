@@ -17,14 +17,20 @@ To use the TTMS, typically this is done by taking photos yourself (or from other
 follow these steps after launching the application:
 
 Upon opening the software you will be asked to select a location for the database file to be stored. Select a folder that you can reliably access and then follow the steps below to use the software.
+![image](https://github.com/user-attachments/assets/9ad8bd55-ee6f-493c-8a0c-01f28493c5de)
 
-1. **Load or Create a Case Folder**: Start by loading an existing case folder or create a new one where all your image data and details will be stored. The case folder should hold all your track images for that particular case.
+The software will then create a database file named "inventory.db" for all your future cases. Anytime you need to re-run the software just select that file and all the data from previous cases can be looaded.
+![image](https://github.com/user-attachments/assets/0c39fbba-eac4-43e3-8d4c-1e75a86b8ee0)
 
-2. **View Library**: Click on 'View Image Library' to see options to capture and view your images.
+If there are any tables created within the database they will be loaded within the "view library" button. 
+
+1. **Load or Create a Case Folder**: Start by loading an existing case folder or create a new one where all your image data and details will be stored. The case folder should hold all your track images for that particular case. This will create a new table within the SQL database file.
+
+3. **View Library**: Click on 'View Image Library' to see options to capture and view your images.
    
-3. **Add Images**: While in the library menu, use the 'Upload Image' or 'Capture Image' buttons to add new shoe prints to your library. You will be prompted to enter the label, brand, and size for each new image. The "capture" button currently only captures from an existing camera (if on a laptop, it will be the webcam).
+4. **Add Images**: While in the library menu, use the 'Upload Image' or 'Capture Image' buttons to add new shoe prints to your library. You will be prompted to enter the label, brand, and size for each new image. The "capture" button currently only captures from an existing camera (if on a laptop, it will be the webcam).
 
-4. **Inventory tread checker**: Do you have too many tracks? Or do you want to keep a collection of tracks that correspond to their owners? The button uses edge detection and other technologies to match what is in inventory to what you find in the field. It will give you a score out of 500 on the probability it is your image in inventory (self-analysis is always required so do not rely on this tool for total accuracy). It keeps a record of the tracks that you acquire and updates the data in the SQL database file accordingly. It allows you to verify accuracy and keeps memory of those tracks made in different environments and it "learns" the more images you provide.
+5. **Inventory tread checker**: Do you have too many tracks? Or do you want to keep a collection of tracks that correspond to their owners? The button uses edge detection and other technologies to match what is in inventory to what you find in the field. It will give you a score out of 500 on the probability it is your image in inventory (self-analysis is always required so do not rely on this tool for total accuracy). It keeps a record of the tracks that you acquire and updates the data in the SQL database file accordingly. It allows you to verify accuracy and keeps memory of those tracks made in different environments and it "learns" the more images you provide.
 
 ## Installation
 This program requires an IDE to run. If you want to make this program portable for Windows machines I would look towards using Pysinstaller (down below).
