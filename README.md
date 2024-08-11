@@ -10,7 +10,7 @@ The Tracks and Treads Management System (TTMS) is a specialized software tool de
 - **Image Comparison**: The system includes functionality to compare new shoe prints with existing entries in the library to find matches using ORB feature detection.
 - **Easy Navigation**: A user-friendly interface that allows for easy navigation and management of shoe print images.
 
-![image](https://github.com/AlexanderMegas/Tracks-and-Treads-Management-System/assets/103082286/e429d2a9-2d88-4b2d-a159-033a93cef88b)
+![image](https://github.com/user-attachments/assets/077109b2-d1fd-49a4-8cd5-03fc12aebb9e)
 
 ## Usage
 To use the TTMS, typically this is done by taking photos yourself (or from others) and transferring the files to a laptop.
