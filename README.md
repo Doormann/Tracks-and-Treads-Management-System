@@ -26,11 +26,18 @@ If there are any tables created within the database they will be loaded within t
 
 1. **Load or Create a Case Folder**: Start by loading an existing case folder or create a new one where all your image data and details will be stored. The case folder should hold all your track images for that particular case. This will create a new table within the SQL database file.
 
+- Clicking on "Create Case" will prompt for a name. It will then verify that the case has been created.
+![image](https://github.com/user-attachments/assets/7e4a237e-e9e0-4673-be06-f44766b8e2dd)
+- Clicking on "Load Case" will show the current cases within the database. You can select a case (table) and it will load its content.
+![image](https://github.com/user-attachments/assets/6bbb21e0-95b4-4c41-af47-766a028b8df5)
+
 3. **View Library**: Click on 'View Image Library' to see options to capture and view your images.
    
 4. **Add Images**: While in the library menu, use the 'Upload Image' or 'Capture Image' buttons to add new shoe prints to your library. You will be prompted to enter the label, brand, and size for each new image. The "capture" button currently only captures from an existing camera (if on a laptop, it will be the webcam).
+![image](https://github.com/user-attachments/assets/99dbf59f-f5ae-4e6e-9162-a4c06a29e147)
 
 5. **Inventory tread checker**: Do you have too many tracks? Or do you want to keep a collection of tracks that correspond to their owners? The button uses edge detection and other technologies to match what is in inventory to what you find in the field. It will give you a score out of 500 on the probability it is your image in inventory (self-analysis is always required so do not rely on this tool for total accuracy). It keeps a record of the tracks that you acquire and updates the data in the SQL database file accordingly. It allows you to verify accuracy and keeps memory of those tracks made in different environments and it "learns" the more images you provide.
+![image](https://github.com/user-attachments/assets/baae3b30-46db-4ffa-a9f1-0fcc9f3218af)
 
 ## Installation
 Download the release here: https://github.com/Doormann/Tracks-and-Treads-Management-System/releases/tag/TTMS.exe
