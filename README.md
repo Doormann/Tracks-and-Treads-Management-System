@@ -29,6 +29,7 @@ If there are any tables created within the database they will be loaded within t
 - Clicking on "Create Case" will prompt for a name. It will then verify that the case has been created.
 ![image](https://github.com/user-attachments/assets/7e4a237e-e9e0-4673-be06-f44766b8e2dd)
 - Clicking on "Load Case" will show the current cases within the database. You can select a case (table) and it will load its content.
+
 ![image](https://github.com/user-attachments/assets/6bbb21e0-95b4-4c41-af47-766a028b8df5)
 
 3. **View Library**: Click on 'View Image Library' to see options to capture and view your images.
