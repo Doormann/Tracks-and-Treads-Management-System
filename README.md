@@ -9,8 +9,10 @@ The Tracks and Treads Management System (TTMS) is a specialized software tool de
 - **Detailed Image Information**: Each image can have detailed annotations including the shoe's brand and size.
 - **Image Comparison**: The system includes functionality to compare new shoe prints with existing entries in the library to find matches using ORB feature detection.
 - **Easy Navigation**: A user-friendly interface that allows for easy navigation and management of shoe print images.
+- **Export Data**: Can export your images with the relevant data to any directory on your computer.
 
-![image](https://github.com/user-attachments/assets/077109b2-d1fd-49a4-8cd5-03fc12aebb9e)
+![image](https://github.com/user-attachments/assets/2e03fb17-5924-43e0-a8f1-113db717fb2d)
+
 
 ## Usage
 To use the TTMS, typically this is done by taking photos yourself (or from others) and transferring the files to a laptop.
@@ -40,7 +42,19 @@ If there are any tables created within the database they will be loaded within t
 5. **Inventory tread checker**: Do you have too many tracks? Or do you want to keep a collection of tracks that correspond to their owners? The button uses edge detection and other technologies to match what is in inventory to what you find in the field. It will give you a score out of 500 on the probability it is your image in inventory (self-analysis is always required so do not rely on this tool for total accuracy). It keeps a record of the tracks that you acquire and updates the data in the SQL database file accordingly. It allows you to verify accuracy and keeps memory of those tracks made in different environments and it "learns" the more images you provide.
 ![image](https://github.com/user-attachments/assets/baae3b30-46db-4ffa-a9f1-0fcc9f3218af)
 
+You can see a preview of what the software is doing when detecting patterns within the photos.
+![Screenshot 2024-05-15 134339](https://github.com/user-attachments/assets/e879bb35-930b-41d2-85ae-63fa5f4d4ba9)
+![SameTreadRecognition](https://github.com/user-attachments/assets/1a4b3086-dd53-442c-9176-bff8b3aa7278)
+
+
 If you verify that "no" the image is not correct it will then ask to give it a correct answer (Name, shoe size, etc.) which will then be recorded in the database.
+
+6. **Export Data**: When you have all the necessary data uploaded and labeled, you may want to export the data in a format that can be readable over IMs or SMS systems. The export feature allows this by combining the data from the database, overalaying the data onto the appropriate image, saving it within the selected directory.
+
+![image](https://github.com/user-attachments/assets/ddfb8cd3-ad46-48c2-87a4-4505d66a6e50)
+![image](https://github.com/user-attachments/assets/4181fc07-35f0-4b6b-8cf8-1d40554e5b20)
+
+
 
 ## Installation
 Download the release here: https://github.com/Doormann/Tracks-and-Treads-Management-System/releases/tag/TTMS.exe
