@@ -1,5 +1,4 @@
 import tkinter as tk
-import os
 from tkinter import filedialog
 from utils.file_utils import init_db
 from gui.main_gui import MainGUI

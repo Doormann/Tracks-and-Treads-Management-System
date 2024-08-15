@@ -4,8 +4,7 @@ import sys
 from tkinter import messagebox, simpledialog, filedialog, Toplevel, Listbox, Button
 import tkinter as tk
 from PIL import Image, ImageDraw, ImageFont
-import win32clipboard
-from io import BytesIO
+from PIL.ImageChops import offset
 
 db_file_path = None
 current_case_table = None
@@ -191,7 +190,10 @@ def export_data():
             font = ImageFont.truetype("arial.ttf", 24)  # Use a larger font size
 
             # Overlay text onto the image
-            draw.text((10, 10), text, fill="white", font=font)
+            x, y = 10, 10
+            for offset in [(x-1, y-1), (x+1, y-1), (x-1, y+1), (x+1, y+1)]:
+                draw.text(offset,text,font=font, fill="black")
+            draw.text((10, 10), text, fill="yellow", font=font)
 
             image = image.convert("RGB")
 
