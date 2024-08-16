@@ -216,7 +216,7 @@ def export_data():
             image = image.convert("RGB")
 
             # Save the modified image to the specified directory
-            output_path = os.path.join(output_directory, f"modified_{image_id}.jpg")
+            output_path = os.path.join(output_directory, f"modified_{label}.jpg")
             image.save(output_path)
 
         messagebox.showinfo("Info", "Data and images saved successfully.")
