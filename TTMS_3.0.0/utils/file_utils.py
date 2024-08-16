@@ -36,7 +36,11 @@ def create_case_table(case_name):
                 file_path TEXT NOT NULL,
                 label TEXT NOT NULL,
                 brand TEXT NOT NULL,
-                size TEXT NOT NULL
+                size TEXT NOT NULL,
+                overall_length TEXT NOT NULL,
+                overall_width TEXT NOT NULL,
+                heel_length TEXT NOT NULL,
+                heel_width TEXT NOT NULL
             )
         ''')
         conn.commit()
@@ -52,16 +56,16 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
     return os.path.normpath(os.path.join(base_path, relative_path))
 
-def save_inventory_to_db(file_path, label, brand, size):
+def save_inventory_to_db(file_path, label, brand, size, overall_length, overall_width, heel_length, heel_width):
     if current_case_table is None:
         raise ValueError("Current case table is not set.")
     try:
         conn = sqlite3.connect(db_file_path)
         cursor = conn.cursor()
         cursor.execute(f'''
-            INSERT INTO {current_case_table} (file_path, label, brand, size)
-            VALUES (?, ?, ?, ?)
-        ''', (file_path, label, brand, size))
+            INSERT INTO {current_case_table} (file_path, label, brand, size, overall_length, overall_width, heel_length, heel_width)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (file_path, label, brand, size, overall_length, overall_width, heel_length, heel_width))
         conn.commit()
         conn.close()
         messagebox.showinfo("Info", "Inventory saved successfully.")
@@ -176,8 +180,16 @@ def export_data():
         conn.close()
 
         for row in rows:
-            image_id, file_path, label, brand, size = row
-            text = f"Label: {label}, Brand: {brand}, Size: {size}"
+            image_id, file_path, label, brand, size, overall_length, overall_width, heel_length, heel_width = row
+            texts = [
+                f"Label: {label}",
+                f"Brand: {brand}",
+                f"Size: {size}",
+                f"Overall Length: {overall_length}",
+                f"Overall Width: {overall_width}",
+                f"Heel Length: {heel_length}",
+                f"Heel Width: {heel_width}"
+            ]
 
             # Open the image
             image = Image.open(file_path)
@@ -189,11 +201,17 @@ def export_data():
             draw = ImageDraw.Draw(image)
             font = ImageFont.truetype("arial.ttf", 24)  # Use a larger font size
 
+            # Calculate the starting position for the text at the bottom left
+            x, y = 10, image.height - (len(texts) * 30) - 10
+
             # Overlay text onto the image
-            x, y = 10, 10
-            for offset in [(x-1, y-1), (x+1, y-1), (x-1, y+1), (x+1, y+1)]:
-                draw.text(offset,text,font=font, fill="black")
-            draw.text((10, 10), text, fill="yellow", font=font)
+            for text in texts:
+                # Draw black outline
+                for offset in [(-1, -1), (1, -1), (-1, 1), (1, 1)]:
+                    draw.text((x + offset[0], y + offset[1]), text, font=font, fill="black")
+                # Draw yellow text
+                draw.text((x, y), text, font=font, fill="yellow")
+                y += 30  # Move to the next line
 
             image = image.convert("RGB")
 

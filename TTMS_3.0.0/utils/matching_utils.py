@@ -34,7 +34,7 @@ def match_shoe_print(label_text):
             edges = process_image_for_edges(file_path)
 
             for image_data in image_inventory:
-                image_id, inventory_image_path, label, brand, size = image_data
+                image_id, inventory_image_path, label, brand, size, overall_length, overall_width, heel_length, heel_width = image_data
                 current_score = compare_images_with_orb(file_path, inventory_image_path)
                 
                 if current_score > best_score:

@@ -32,8 +32,12 @@ def open_library_window(root):
             label = simpledialog.askstring("Label Image", "Enter the label for this image:", parent=library_window)
             brand = simpledialog.askstring("Brand", "Enter the brand name", parent=library_window)
             size = simpledialog.askstring("Size", "Enter the shoe size", parent=library_window)
-            if label and brand and size:
-                save_inventory_to_db(file_path, label, brand, size)
+            overall_length = simpledialog.askstring("Overall length", "Enter overall length", parent=library_window)
+            overall_width = simpledialog.askstring("Overall width", "Enter overall width", parent=library_window)
+            heel_length = simpledialog.askstring("Heel length", "Enter heel length", parent=library_window)
+            heel_width = simpledialog.askstring("Heel width", "Enter heel width", parent=library_window)
+            if label and brand and size and overall_length and overall_width and heel_length and heel_width:
+                save_inventory_to_db(file_path, label, brand, size, overall_length, overall_width, heel_length, heel_width)
 
     def capture_image():
         if not check_case_table_exists():
@@ -61,7 +65,7 @@ def open_library_window(root):
         
         images_window = Toplevel(library_window)
         images_window.title("Uploaded Images")
-        images_window.geometry("800x800")
+        images_window.geometry("900x900")
 
         canvas = Canvas(images_window)
         scrollbar = Scrollbar(images_window, orient="vertical", command=canvas.yview)
@@ -76,7 +80,7 @@ def open_library_window(root):
         scrollable_frame.bind("<Configure>", on_frame_configure)
 
         for image_data in image_inventory:
-            image_id, file_path, label, brand, size = image_data
+            image_id, file_path, label, brand, size, overall_length, overall_width, heel_length, heel_width = image_data
             image_frame = Frame(scrollable_frame)
             image_frame.pack(fill='x', padx=5, pady=5)
 
@@ -87,7 +91,7 @@ def open_library_window(root):
             img_label.image = img
             img_label.pack(side="left")
 
-            formatted_label = f"{label} - {brand} - Size: {size}"
+            formatted_label = f"{label} - {brand} - Size: {size} - Overall Length: {overall_length} - Overall Width: {overall_width} - Heel Length: {heel_length} - Heel Width: {heel_width}"
             Label(image_frame, text=formatted_label).pack(side="left")
 
         canvas.pack(side="left", fill="both", expand=True)
