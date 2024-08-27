@@ -15,8 +15,9 @@ The Tracks and Treads Management System (TTMS) is a specialized software tool de
 
 
 ## Usage
-To use the TTMS, typically this is done by taking photos yourself (or from others) and transferring the files to a laptop.
-follow these steps after launching the application:
+To use the TTMS, typically this is done by taking photos yourself (or from others) and transferring the files to a laptop. This can be done using Airdrop, quick share, connecting phone directly, or sending it via messages. After the photos have been transfered, the person working with the software will need to input the information. This software is most effiecient when used on PLS/IKP area and to invetory tracks. Once a track of interest has been identified the information can then be distributed to other trackers.  
+
+Follow these steps after launching the application:
 
 Upon opening the software you will be asked to select a location for the database file to be stored. Select a folder that you can reliably access and then follow the steps below to use the software.
 ![image](https://github.com/user-attachments/assets/9ad8bd55-ee6f-493c-8a0c-01f28493c5de)
