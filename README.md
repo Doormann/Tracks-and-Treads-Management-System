@@ -51,10 +51,8 @@ You can see a preview of what the software is doing when detecting patterns with
 If you verify that "no" the image is not correct it will then ask to give it a correct answer (Name, shoe size, etc.) which will then be recorded in the database.
 
 6. **Export Data**: When you have all the necessary data uploaded and labeled, you may want to export the data in a format that can be readable over IMs or SMS systems. The export feature allows this by combining the data from the database, overalaying the data onto the appropriate image, saving it within the selected directory.
-
-![image](https://github.com/user-attachments/assets/ddfb8cd3-ad46-48c2-87a4-4505d66a6e50)
-![image](https://github.com/user-attachments/assets/4181fc07-35f0-4b6b-8cf8-1d40554e5b20)
-
+   
+![modified_Chonkey Teeth](https://github.com/user-attachments/assets/e4f3e99d-10f4-460f-a5a4-3ab0a2580988)
 
 
 ## Installation
