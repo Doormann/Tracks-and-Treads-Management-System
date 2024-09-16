@@ -1,7 +1,7 @@
 # Tracks and Treads Management System (TTMS)
 
 ## Overview
-The Tracks and Treads Management System (TTMS) is a specialized software tool designed for tracking and managing images related to shoe prints in forensic and investigative contexts. This tool is particularly useful for law enforcement agencies, forensic departments, and Search and Rescue (SAR) teams that need to categorize, compare, and retrieve shoe print data efficiently. My primary use of this tool for SAR is to inventory tracks on a task for a missing subject.
+The Tracks and Treads Management System (TTMS) is a Tkintet specialized software tool designed for tracking and managing images related to shoe prints in forensic and investigative contexts. This tool is particularly useful for law enforcement agencies, forensic departments, and Search and Rescue (SAR) teams that need to categorize, compare, and retrieve shoe print data efficiently. My primary use of this tool for SAR is to inventory tracks on a task for a missing subject.
 
 ## Features
 - **Image Upload and Capture**: Users can upload images from their devices or capture images directly using a connected camera.
