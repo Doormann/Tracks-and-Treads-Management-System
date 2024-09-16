@@ -40,6 +40,8 @@ If there are any tables created within the database they will be loaded within t
 4. **Add Images**: While in the library menu, use the 'Upload Image' or 'Capture Image' buttons to add new shoe prints to your library. You will be prompted to enter the label, brand, and size for each new image. The "capture" button currently only captures from an existing camera (if on a laptop, it will be the webcam).
 ![image](https://github.com/user-attachments/assets/99dbf59f-f5ae-4e6e-9162-a4c06a29e147)
 
+Note: The "view library" function uses thumbnails from the photos you upload to the database. The photos are not stored within the database. They are only references to the actual photos sorted on your computer. It saves the directory path of where the photos are. If you move or delete the photos after uploading them the software will not be able to keep record of them. 
+
 5. **Inventory tread checker**: Do you have too many tracks? Or do you want to keep a collection of tracks that correspond to their owners? The button uses edge detection and other technologies to match what is in inventory to what you find in the field. It will give you a score out of 500 on the probability it is your image in inventory (self-analysis is always required so do not rely on this tool for total accuracy). It keeps a record of the tracks that you acquire and updates the data in the SQL database file accordingly. It allows you to verify accuracy and keeps memory of those tracks made in different environments and it "learns" the more images you provide.
 ![image](https://github.com/user-attachments/assets/baae3b30-46db-4ffa-a9f1-0fcc9f3218af)
 
