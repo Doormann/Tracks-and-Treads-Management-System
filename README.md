@@ -22,7 +22,7 @@ Follow these steps after launching the application:
 Upon opening the software you will be asked to select a location for the database file to be stored. Select a folder that you can reliably access and then follow the steps below to use the software.
 ![image](https://github.com/user-attachments/assets/9ad8bd55-ee6f-493c-8a0c-01f28493c5de)
 
-The software will then create a database file named "inventory.db" for all your future cases. Anytime you need to re-run the software just select that file and all the data from previous cases can be looaded.
+The software will then create a database file named "inventory.db" for all your future cases. Anytime you need to re-run the software just select that file and all the data from previous cases can be loaded.
 ![image](https://github.com/user-attachments/assets/0c39fbba-eac4-43e3-8d4c-1e75a86b8ee0)
 
 If there are any tables created within the database they will be loaded within the "view library" button. 
