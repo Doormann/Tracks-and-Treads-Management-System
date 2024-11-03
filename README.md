@@ -94,3 +94,17 @@ You can also turn this into an EXE by using Pyinstaller or Auto-py-to-exe.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+## Disclaimer
+
+This software is provided "as-is," without any express or implied warranties. In no event shall the creator or contributors be held liable for any damages arising from the use of this software. Use it at your own risk.
+
+By using this software, you agree that:
+
+1. The software is provided without warranty of any kind, either expressed or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, or non-infringement.
+
+
+2. In no event shall the author or contributors be held liable for any claim, damages, or other liabilities, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the software or the use or other dealings in the software.
+
